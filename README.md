@@ -1,6 +1,6 @@
-# Laravel 12 Volt Livewire 入門套件
+# Laravel 13 Volt Livewire 入門套件
 
-入門套件採用 Livewire 3、Laravel Volt、Tailwind 和 Flux UI 建置，所有後端和前端代碼都存在於您的應用程式內，以實現完全自訂。
+入門套件採用 Livewire 4、Laravel Volt、Tailwind 和 Flux UI 建置，所有後端和前端代碼都存在於您的應用程式內，以實現完全自訂。
 
 ## 使用方式
 - 把整個專案複製一份到你的電腦裡，這裡指的「內容」不是只有檔案，而是指所有整個專案的歷史紀錄、分支、標籤等內容都會複製一份下來。
@@ -39,14 +39,14 @@ $ php artisan test
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/HBionL0.png)
+![](https://i.imgur.com/HpNQQtb.png)
 > 檢查程式碼是否如預期般執行
 
-![](https://i.imgur.com/5dlWNbk.png)
+![](https://i.imgur.com/5sTEmFr.png)
 > 建立新的帳號
 
-![](https://i.imgur.com/qp6rckM.png)
+![](https://i.imgur.com/ekEqFlI.png)
 > 使用現有的帳號登入後，進入控制面板
 
-![](https://i.imgur.com/ttu9oS1.png)
+![](https://i.imgur.com/a8YJnuv.png)
 > 管理使用者的個人資料

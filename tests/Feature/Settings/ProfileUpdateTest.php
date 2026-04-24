@@ -3,16 +3,19 @@
 namespace Tests\Feature\Settings;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Volt\Volt;
 use Tests\TestCase;
 
 class ProfileUpdateTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_profile_page_is_displayed(): void
     {
         $this->actingAs($user = User::factory()->create());
 
-        $this->get('/settings/profile')->assertOk();
+        $this->get(route('profile.edit'))->assertOk();
     }
 
     public function test_profile_information_can_be_updated(): void
@@ -23,7 +26,7 @@ class ProfileUpdateTest extends TestCase
 
         $response = Volt::test('settings.profile')
             ->set('name', 'Test User')
-            ->set('email', 'test@example.com')
+            ->set('email', 'test@admin.com')
             ->call('updateProfileInformation');
 
         $response->assertHasNoErrors();
@@ -31,7 +34,7 @@ class ProfileUpdateTest extends TestCase
         $user->refresh();
 
         $this->assertEquals('Test User', $user->name);
-        $this->assertEquals('test@example.com', $user->email);
+        $this->assertEquals('test@admin.com', $user->email);
         $this->assertNull($user->email_verified_at);
     }
 
