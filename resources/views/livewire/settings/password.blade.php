@@ -42,7 +42,7 @@ new class extends Component {
 <section class="w-full">
     @include('partials.settings-heading')
 
-    <flux:heading class="sr-only">{{ __('Password Settings') }}</flux:heading>
+    <flux:heading level="2" class="sr-only">{{ __('Password Settings') }}</flux:heading>
 
     <x-settings.layout :heading="__('Update password')" :subheading="__('Ensure your account is using a long, random password to stay secure')">
         <form method="POST" wire:submit="updatePassword" class="mt-6 space-y-6">
@@ -59,6 +59,7 @@ new class extends Component {
                 type="password"
                 required
                 autocomplete="new-password"
+                passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
             />
             <flux:input
                 wire:model="password_confirmation"
@@ -66,6 +67,7 @@ new class extends Component {
                 type="password"
                 required
                 autocomplete="new-password"
+                passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
             />
 
             <div class="flex items-center gap-4">
